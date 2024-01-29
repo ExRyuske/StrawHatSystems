@@ -1,5 +1,5 @@
 # StrawHatLinux
-My CachyOS configuration
+My CachyOS (Offline Gnome) configuration
 ```
 #Configs
 chsh -s /usr/bin/bash
