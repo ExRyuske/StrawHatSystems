@@ -63,7 +63,7 @@ systemctl enable smb.service
 doas smbpasswd -a ryuu
 
 #Cleanup
-paru -Rs nautilus cachy-browser octopi alacritty cachyos-packageinstaller parole galculator linux-cachyos-zfs cachyos-gnome-settings gnome-maps gnome-music gnome-calendar gnome-characters gnome-clocks cachyos-fish-config cachyos-zsh-config cachyos-kernel-manager vim simple-scan epiphany gnome-contacts sushi evince gnome-weather gnome-font-viewer lftp gnome-text-editor gnome-software cachyos-hello gnome-tour xed gnome-user-docs yelp qt5ct totem
+paru -Rs fastfetch-git nautilus cachy-browser octopi alacritty cachyos-packageinstaller parole galculator linux-cachyos-zfs cachyos-gnome-settings gnome-maps gnome-music gnome-calendar gnome-characters gnome-clocks cachyos-fish-config cachyos-zsh-config cachyos-kernel-manager vim simple-scan epiphany gnome-contacts sushi evince gnome-weather gnome-font-viewer lftp gnome-text-editor gnome-software cachyos-hello gnome-tour xed gnome-user-docs yelp qt5ct totem
 paru -Qtdq | paru -Rns - && doas paccache -r && doas paccache -rk1 && paru -Sc
 ```
 ```
