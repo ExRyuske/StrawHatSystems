@@ -31,20 +31,21 @@ paru -Rs linux-lts linux-lts-headers
 #Graphics drivers (AMD)
 paru -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver rocm-opencl-runtime --needed
 
-#Desktop environment (Gnome + Wayland + Kvantum)
-paru -s plasma
-#paru -S gnome-console gnome-control-center gnome-keyring gnome-system-monitor gnome-shell gnome-shell-extensions loupe gnome-tweaks gnome-session-properties dconf-editor gnome-shell-extension-appindicator gnome-shell-extension-clipboard-indicator breeze kvantum xdg-desktop-portal xdg-desktop-portal-gnome xdg-desktop-portal-kde gdm --needed
-#cd /usr/share/gnome-shell/extensions
-#doas rm -r apps-menu@gnome-shell-extensions.gcampax.github.com auto-move-windows@gnome-shell-extensions.gcampax.github.com drive-menu@gnome-shell-extensions.gcampax.github.com launch-new-instance@gnome-shell-extensions.gcampax.github.com light-style@gnome-shell-extensions.gcampax.github.com native-window-placement@gnome-shell-extensions.gcampax.github.com places-menu@gnome-shell-extensions.gcampax.github.com screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com user-theme@gnome-shell-extensions.gcampax.github.com window-list@gnome-shell-extensions.gcampax.github.com windowsNavigator@gnome-shell-extensions.gcampax.github.com workspace-indicator@gnome-shell-extensions.gcampax.github.com
+#Audio (PipeWire)
 
-#Gaming
-paru -S steam proton-ge-custom-bin protontricks gamemode lib32-gamemode goverlay heroic-games-launcher-bin prismlauncher --needed
+
+#Desktop environment (Gnome + Wayland)
+paru -s plasma
 
 #Python (Pip + OBS)
 cd
 paru -S python-pip obs-studio-tytan652 obs-pipewire-audio-capture-bin
 python -m venv obsws
 obsws/bin/python -m pip install obsws-python
+
+#Gaming
+paru -S steam proton-ge-custom-bin protontricks gamemode lib32-gamemode goverlay heroic-games-launcher-bin prismlauncher needed
+doas usermod -a -G games
 
 #External drives
 doas mkdir /mnt/games
