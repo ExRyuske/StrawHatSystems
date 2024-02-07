@@ -35,7 +35,7 @@ paru -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib3
 paru -S pipewire lib32-pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire-jack --needed
 
 #Desktop environment (Gnome + Wayland)
-paru -S plasma plasma-wayland-session --needed
+paru -S plasma plasma-wayland-session konsole --needed
 systemctl enable sddm.service
 
 #Python (Pip + OBS)
