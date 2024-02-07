@@ -45,8 +45,7 @@ python -m venv obsws
 obsws/bin/python -m pip install obsws-python
 
 #Gaming
-paru -S steam proton-ge-custom-bin protontricks gamemode lib32-gamemode goverlay heroic-games-launcher-bin prismlauncher needed
-doas usermod -a -G games
+paru -S steam proton-ge-custom-bin protontricks gamemode lib32-gamemode goverlay heroic-games-launcher-bin prismlauncher --needed
 
 #External drives
 doas mkdir /mnt/games
