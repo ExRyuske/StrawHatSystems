@@ -1,6 +1,6 @@
 #Configs
 sudo cp -r StrawHatLinux/etc /
-sudo cp -r StrawHatLinux/usr /
+#sudo cp -r StrawHatLinux/usr /
 
 #Privilege elevation (OpenDoas)
 sudo pacman -S opendoas
@@ -26,7 +26,7 @@ paru -S jdk-temurin jdk17-temurin
 
 #Kernel (TKG)
 paru -S linux-lts-tkg-eevdf linux-lts-tkg-eevdf-headers
-paru -Rs linux-lts linux-lts-headers
+paru -Rs linux linux-headers
 
 #Graphics drivers (AMD)
 paru -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver rocm-opencl-runtime --needed
@@ -35,7 +35,8 @@ paru -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib3
 paru -S pipewire lib32-pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire-jack --needed
 
 #Desktop environment (Gnome + Wayland)
-paru -S plasma --needed
+paru -S plasma plasma-wayland-session --needed
+systemctl enable sddm.service
 
 #Python (Pip + OBS)
 cd
@@ -50,10 +51,10 @@ doas usermod -a -G games
 #External drives
 doas mkdir /mnt/games
 doas chmod -R 777 /mnt/games
-echo '/dev/disk/by-uuid/ae38bf74-d54f-4630-aded-385d98805e2b /mnt/games auto nosuid,nodev,nofail,x-gvfs-show 0 0' | sudo tee -a /etc/fstab
+echo 'LABEL=Games /mnt/games ext4 defaults 0 0' | sudo tee -a /etc/fstab
 doas mkdir /mnt/media
 doas chmod -R 777 /mnt/media
-echo '/dev/disk/by-uuid/541d1bcd-85e2-45c6-955a-8904e6dc5483 /mnt/media auto nosuid,nodev,nofail,x-gvfs-show 0 0' | sudo tee -a /etc/fstab
+echo 'LABEL=Media /mnt/media ext4 defaults 0 0' | sudo tee -a /etc/fstab
 
 #Server (ZeroTier + Sunshine + Samba)
 paru -S zerotier-one sunshine samba --needed
@@ -64,7 +65,7 @@ systemctl enable smb.service
 doas smbpasswd -a $(whoami)
 
 #Packages
-paru -S brave-bin davinci-resolve easyeffects kate krita less libreoffice-still lsp-plugins calf noto-fonts-cjk noto-fonts-emoji qbittorrent shutter-encoder-bin kotatogram-desktop upscayl vesktop-bin vlc vscodium yandex-browser ark dolphin kio-admin --needed
+paru -S brave-bin easyeffects kate krita less libreoffice-still lsp-plugins calf noto-fonts-cjk noto-fonts-emoji qbittorrent shutter-encoder-bin kotatogram-desktop upscayl vesktop-bin vlc vscodium yandex-browser ark dolphin kio-admin --needed
 
 #Cleanup
 paru -Qtdq | paru -Rns -
