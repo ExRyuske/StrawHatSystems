@@ -50,10 +50,10 @@ paru -S steam proton-ge-custom-bin protontricks gamemode lib32-gamemode goverlay
 #External drives
 doas mkdir /mnt/games
 doas chmod -R 777 /mnt/games
-echo 'LABEL=Games /mnt/games ext4 defaults 0 0' | sudo tee -a /etc/fstab
+echo 'LABEL=Games /mnt/games ext4 defaults 0 0' | doas tee -a /etc/fstab
 doas mkdir /mnt/media
 doas chmod -R 777 /mnt/media
-echo 'LABEL=Media /mnt/media ext4 defaults 0 0' | sudo tee -a /etc/fstab
+echo 'LABEL=Media /mnt/media ext4 defaults 0 0' | doas tee -a /etc/fstab
 
 #Server (ZeroTier + Sunshine + Samba)
 paru -S zerotier-one sunshine samba --needed
