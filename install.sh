@@ -1,6 +1,4 @@
 #Configs
-sudo pacman -S git --needed
-git clone https://github.com/ExRyuske/StrawHatLinux.git
 sudo cp -r StrawHatLinux/etc /
 sudo cp -r StrawHatLinux/usr /
 
