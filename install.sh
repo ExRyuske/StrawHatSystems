@@ -36,7 +36,7 @@ paru -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib3
 paru -S pipewire lib32-pipewire wireplumber pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack lib32-pipewire-jack --needed
 
 #Desktop environment (Gnome + Wayland)
-paru -S plasma plasma-wayland-session konsole spectacle --needed
+paru -S plasma plasma-wayland-session konsole spectacle ark dolphin kio-admin unrar-free p7zip --needed
 systemctl enable sddm.service
 
 #Python (Pip + OBS)
@@ -67,7 +67,7 @@ systemctl enable smb.service
 doas smbpasswd -a $(whoami)
 
 #Packages
-paru -S brave-bin easyeffects kate krita less libreoffice-still lsp-plugins calf noto-fonts-cjk noto-fonts-emoji qbittorrent shutter-encoder-bin kotatogram-desktop upscayl vesktop-bin vscodium yandex-browser ark dolphin kio-admin --needed
+paru -S brave-bin easyeffects kate krita less libreoffice-still lsp-plugins calf noto-fonts-cjk noto-fonts-emoji qbittorrent shutter-encoder-bin kotatogram-desktop upscayl vesktop-bin vscodium yandex-browser --needed
 
 #Cleanup
 paru -Qtdq | paru -Rns -
