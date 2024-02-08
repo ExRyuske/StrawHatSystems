@@ -46,6 +46,7 @@ obsws/bin/python -m pip install obsws-python
 
 #Gaming
 paru -S steam proton-ge-custom-bin protontricks gamemode lib32-gamemode goverlay heroic-games-launcher-bin prismlauncher --needed
+doas usermod -aG gamemode $(whoami)
 
 #External drives
 doas mkdir /mnt/games
@@ -60,6 +61,7 @@ paru -S zerotier-one sunshine samba --needed
 systemctl enable zerotier-one.service
 echo 'KERNEL=="uinput", SUBSYSTEM=="misc", OPTIONS+="static_node=uinput", TAG+="uaccess"' | doas tee /etc/udev/rules.d/85-sunshine.rules
 doas setcap cap_sys_admin+p $(readlink -f $(which sunshine))
+systemctl --user enable sunshine
 systemctl enable smb.service
 doas smbpasswd -a $(whoami)
 
