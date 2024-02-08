@@ -64,7 +64,7 @@ systemctl enable smb.service
 doas smbpasswd -a $(whoami)
 
 #Packages
-paru -S brave-bin easyeffects kate krita less libreoffice-still lsp-plugins calf noto-fonts-cjk noto-fonts-emoji qbittorrent shutter-encoder-bin kotatogram-desktop upscayl vesktop-bin vlc vscodium yandex-browser ark dolphin kio-admin --needed
+paru -S brave-bin easyeffects kate krita less libreoffice-still lsp-plugins calf noto-fonts-cjk noto-fonts-emoji qbittorrent shutter-encoder-bin kotatogram-desktop upscayl vesktop-bin vscodium yandex-browser ark dolphin kio-admin --needed
 
 #Cleanup
 paru -Qtdq | paru -Rns -
