@@ -22,7 +22,7 @@ echo 'Include = /etc/pacman.d/chaotic-mirrorlist' | doas tee -a /etc/pacman.conf
 
 #Upgrade system and install needed packages
 paru -Syuu
-paru -S jdk-temurin jdk17-temurin noto-fonts
+paru -S jdk-temurin jdk17-temurin noto-fonts hdparm
 
 #Kernel (TKG + Generate GRUB)
 paru -S linux-lts-tkg-eevdf linux-lts-tkg-eevdf-headers
