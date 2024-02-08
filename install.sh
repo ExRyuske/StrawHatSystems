@@ -24,9 +24,10 @@ echo 'Include = /etc/pacman.d/chaotic-mirrorlist' | doas tee -a /etc/pacman.conf
 paru -Syuu
 paru -S jdk-temurin jdk17-temurin noto-fonts
 
-#Kernel (TKG)
+#Kernel (TKG + Generate GRUB)
 paru -S linux-lts-tkg-eevdf linux-lts-tkg-eevdf-headers
-paru -Rs linux linux-headers
+paru -Rs linux
+doas grub-mkconfig -o /boot/grub/grub.cfg
 
 #Graphics drivers (AMD)
 paru -S mesa lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver rocm-opencl-runtime --needed
